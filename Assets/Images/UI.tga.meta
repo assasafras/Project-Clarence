@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: bc8b6c97286c1f24fb4356eb3c530d13
+timeCreated: 1462255991
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Shield_Border
+    21300002: Health_Border
+    21300004: Control_Groove
+    21300006: Control_Thumb
+    21300008: Button_Secondary
+    21300010: Button_Primary
+    21300012: Progress_Fill
+    21300014: UI_0
+    21300016: UI_1
+    21300018: UI_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Shield_Border
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 218
+        width: 587
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -291.5, y: 44.5}
+        - {x: -293.5, y: 42.5}
+        - {x: -293.5, y: -43.5}
+        - {x: -292.5, y: -44.5}
+        - {x: 293.5, y: -44.5}
+        - {x: 293.5, y: 44.5}
+      - - {x: -274.5, y: 26.5}
+        - {x: 274.5, y: 26.5}
+        - {x: 274.5, y: -26.5}
+        - {x: -274.5, y: -26.5}
+    - name: Health_Border
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 218
+        width: 590
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -293, y: 44.5}
+        - {x: -295, y: 42.5}
+        - {x: -295, y: -43.5}
+        - {x: -294, y: -44.5}
+        - {x: 294, y: -44.5}
+        - {x: 294, y: 38.5}
+        - {x: 293, y: 44.5}
+      - - {x: -276, y: 26.5}
+        - {x: 273, y: 26.5}
+        - {x: 273, y: -26.5}
+        - {x: -276, y: -26.5}
+    - name: Control_Groove
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 604
+        width: 88
+        height: 592
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 296}
+        - {x: -44, y: 294}
+        - {x: -44, y: -293}
+        - {x: -41, y: -296}
+        - {x: 41, y: -296}
+        - {x: 44, y: -293}
+        - {x: 44, y: 293}
+        - {x: 41, y: 296}
+    - name: Control_Thumb
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1004
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62, y: 95}
+        - {x: 56, y: 96}
+        - {x: -40, y: 96}
+        - {x: -55, y: 86}
+        - {x: -93, y: 53}
+        - {x: -96, y: 34}
+        - {x: -96, y: -36}
+        - {x: -81, y: -63}
+        - {x: -53, y: -94}
+        - {x: -40, y: -96}
+        - {x: 43, y: -96}
+        - {x: 57, y: -89}
+        - {x: 96, y: -41}
+        - {x: 96, y: 34}
+    - name: Button_Secondary
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 32
+        width: 181
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84.5, y: 62}
+        - {x: 38.5, y: 92}
+        - {x: -32.5, y: 92}
+        - {x: -67.5, y: 79}
+        - {x: -90.5, y: 34}
+        - {x: -90.5, y: -36}
+        - {x: -89.5, y: -42}
+        - {x: -70.5, y: -83}
+        - {x: -35.5, y: -92}
+        - {x: 44.5, y: -92}
+        - {x: 58.5, y: -81}
+        - {x: 90.5, y: -42}
+        - {x: 90.5, y: 36}
+    - name: Button_Primary
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 36
+        width: 181
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 90}
+        - {x: -60.5, y: 82}
+        - {x: -90.5, y: 50}
+        - {x: -90.5, y: -43}
+        - {x: -55.5, y: -79}
+        - {x: -42.5, y: -90}
+        - {x: 57.5, y: -90}
+        - {x: 90.5, y: -37}
+        - {x: 90.5, y: 51}
+        - {x: 38.5, y: 90}
+    - name: Progress_Fill
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 843
+        width: 587
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 293.5, y: 40.5}
+        - {x: 290.5, y: 44.5}
+        - {x: -290.5, y: 44.5}
+        - {x: -293.5, y: 41.5}
+        - {x: -293.5, y: -41.5}
+        - {x: -290.5, y: -44.5}
+        - {x: 290.5, y: -44.5}
+        - {x: 293.5, y: -41.5}
+    - name: UI_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1317
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82, y: 82}
+        - {x: -82, y: -82}
+        - {x: 79, y: -82}
+        - {x: 82, y: -79}
+        - {x: 82, y: 79}
+        - {x: 79, y: 82}
+    - name: UI_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1598
+        width: 649
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -259.5, y: 25.5}
+        - {x: -259.5, y: 28.5}
+        - {x: -267.5, y: 31.5}
+        - {x: -324.5, y: 31.5}
+        - {x: -324.5, y: -31.5}
+        - {x: -267.5, y: -31.5}
+        - {x: -259.5, y: -23.5}
+        - {x: -259.5, y: -3.5}
+        - {x: -269.5, y: 6.5}
+      - - {x: -246.5, y: 15.5}
+        - {x: -254.5, y: 5.5}
+        - {x: -254.5, y: -23.5}
+        - {x: -246.5, y: -31.5}
+        - {x: -187.5, y: -31.5}
+        - {x: -187.5, y: 15.5}
+      - - {x: -172.5, y: 15.5}
+        - {x: -182.5, y: 14.5}
+        - {x: -182.5, y: -29.5}
+        - {x: -181.5, y: -31.5}
+        - {x: -117.5, y: -31.5}
+        - {x: -115.5, y: -23.5}
+        - {x: -115.5, y: 15.5}
+      - - {x: -101.5, y: 15.5}
+        - {x: -101.5, y: -31.5}
+        - {x: -79.5, y: -31.5}
+        - {x: -43.5, y: 2.5}
+        - {x: -43.5, y: 15.5}
+      - - {x: -38.5, y: 15.5}
+        - {x: -38.5, y: -29.5}
+        - {x: -32.5, y: -31.5}
+        - {x: 28.5, y: -31.5}
+        - {x: 28.5, y: 14.5}
+        - {x: 24.5, y: 15.5}
+      - - {x: 191.5, y: 31.5}
+        - {x: 187.5, y: 27.5}
+        - {x: 187.5, y: -16.5}
+        - {x: 191.5, y: -31.5}
+        - {x: 254.5, y: -31.5}
+        - {x: 254.5, y: 31.5}
+      - - {x: 268.5, y: 15.5}
+        - {x: 268.5, y: -31.5}
+        - {x: 324.5, y: -31.5}
+        - {x: 324.5, y: 15.5}
+      - - {x: 51.5, y: -2.5}
+        - {x: 51.5, y: -24.5}
+        - {x: 73.5, y: -24.5}
+        - {x: 73.5, y: -2.5}
+      - - {x: 51.5, y: 24.5}
+        - {x: 51.5, y: 2.5}
+        - {x: 73.5, y: 2.5}
+        - {x: 73.5, y: 24.5}
+    - name: UI_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1917
+        width: 338
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 165, y: 48}
+        - {x: -166, y: 48}
+        - {x: -169, y: 45}
+        - {x: -169, y: -48}
+        - {x: 169, y: -48}
+        - {x: 169, y: 45}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

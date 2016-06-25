@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: ea003e0d323c4a744a0242e39377594d
+timeCreated: 1463385947
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UI_Arrow_Warning
+    21300002: UI_Crosshair
+    21300004: UI_Button_Primary
+    21300006: UI_Button_Secondary
+    21300008: UI_Bar_HP_Version1
+    21300010: UI_Bar_HP_Version2
+    21300012: UI_Shield_Border
+    21300014: UI_Shield_Bar
+    21300016: UI_Arrow_Up
+    21300018: UI_Button_Rotate
+    21300020: UI_BUtton_Pause
+    21300022: UI_Coin
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 1864, y: 0, z: 182, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UI_Arrow_Warning
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1134
+        width: 142
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50, y: 65.5}
+        - {x: 31, y: 65.5}
+        - {x: -24, y: 49.5}
+        - {x: -24, y: -49.5}
+        - {x: 28, y: -65.5}
+        - {x: 46, y: -65.5}
+        - {x: 49, y: -58.5}
+        - {x: 71, y: -15.5}
+        - {x: 71, y: 9.5}
+      - - {x: -71, y: 49.5}
+        - {x: -71, y: -48.5}
+        - {x: -66, y: -48.5}
+        - {x: -64, y: -46.5}
+        - {x: -64, y: 47.5}
+        - {x: -66, y: 49.5}
+      - - {x: -54, y: 49.5}
+        - {x: -56, y: 47.5}
+        - {x: -56, y: -46.5}
+        - {x: -54, y: -48.5}
+        - {x: -35, y: -48.5}
+        - {x: -33, y: -46.5}
+        - {x: -33, y: 47.5}
+        - {x: -35, y: 49.5}
+    - name: UI_Crosshair
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 744
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: 77.5}
+        - {x: -11.5, y: 77.5}
+        - {x: -63.5, y: 48.5}
+        - {x: -77.5, y: 7.5}
+        - {x: -77.5, y: -8.5}
+        - {x: -9.5, y: -77.5}
+        - {x: 8.5, y: -77.5}
+        - {x: 77.5, y: -19.5}
+        - {x: 77.5, y: 6.5}
+        - {x: 62.5, y: 34.5}
+      - - {x: -38.5, y: -26.5}
+        - {x: -38.5, y: 26.5}
+        - {x: 32.5, y: 38.5}
+        - {x: 28.5, y: -42.5}
+    - name: UI_Button_Primary
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 92
+        width: 194
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97, y: 97}
+        - {x: -97, y: -97}
+        - {x: 97, y: -97}
+        - {x: 97, y: 97}
+    - name: UI_Button_Secondary
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 95
+        width: 195
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97.5, y: 98}
+        - {x: -97.5, y: -98}
+        - {x: 97.5, y: -98}
+        - {x: 97.5, y: 98}
+    - name: UI_Bar_HP_Version1
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 9
+        width: 116
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 16, z: 32, w: 18}
+      outline:
+      - - {x: -56, y: 37}
+        - {x: -58, y: 18}
+        - {x: -58, y: -37}
+        - {x: 47, y: -37}
+        - {x: 58, y: -4}
+        - {x: 58, y: 37}
+    - name: UI_Bar_HP_Version2
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 99
+        width: 131
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 43, y: 0, z: 44, w: 0}
+      outline:
+      - - {x: -41.5, y: 38}
+        - {x: -65.5, y: 0}
+        - {x: -65.5, y: -36}
+        - {x: -64.5, y: -38}
+        - {x: 36.5, y: -38}
+        - {x: 65.5, y: -9}
+        - {x: 65.5, y: 38}
+    - name: UI_Shield_Border
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 184
+        width: 154
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 35, w: 0}
+      outline:
+      - - {x: -62, y: 35.5}
+        - {x: -77, y: -1.5}
+        - {x: -77, y: -35.5}
+        - {x: 62, y: -35.5}
+        - {x: 66, y: -34.5}
+        - {x: 77, y: 4.5}
+        - {x: 77, y: 35.5}
+      - - {x: -51, y: -17.5}
+        - {x: -51, y: -15.5}
+        - {x: -48, y: -4.5}
+        - {x: -40, y: 10.5}
+        - {x: -38, y: 14.5}
+        - {x: 50, y: 14.5}
+        - {x: 48, y: 12.5}
+        - {x: 35, y: -19.5}
+        - {x: -53, y: -19.5}
+    - name: UI_Shield_Bar
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 272
+        width: 47
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 0, z: 18, w: 0}
+      outline:
+      - - {x: -13.5, y: 16}
+        - {x: -23.5, y: -7}
+        - {x: -23.5, y: -16}
+        - {x: 13.5, y: -16}
+        - {x: 23.5, y: 7}
+        - {x: 23.5, y: 16}
+    - name: UI_Arrow_Up
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 389
+        width: 90
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 29.5}
+        - {x: -45, y: -14.5}
+        - {x: -45, y: -29.5}
+        - {x: 45, y: -29.5}
+        - {x: 45, y: -11.5}
+        - {x: 6, y: 29.5}
+    - name: UI_Button_Rotate
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 638
+        width: 247
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.5, y: 81}
+        - {x: -47.5, y: 37}
+        - {x: -123.5, y: -40}
+        - {x: -123.5, y: -81}
+        - {x: 123.5, y: -81}
+        - {x: 123.5, y: -40}
+        - {x: 2.5, y: 81}
+    - name: UI_BUtton_Pause
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1340
+        width: 102
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 30}
+        - {x: -34, y: 27}
+        - {x: -40, y: 11}
+        - {x: -51, y: -21}
+        - {x: -51, y: -30}
+        - {x: -15, y: -30}
+        - {x: -12, y: -29}
+        - {x: 3, y: 21}
+        - {x: 3, y: 30}
+      - - {x: 16, y: 30}
+        - {x: -3, y: -24}
+        - {x: -3, y: -30}
+        - {x: 33, y: -30}
+        - {x: 51, y: 18}
+        - {x: 51, y: 30}
+    - name: UI_Coin
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1335
+        width: 54
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 35}
+        - {x: -27, y: 28}
+        - {x: -27, y: -35}
+        - {x: 20, y: -35}
+        - {x: 27, y: -32}
+        - {x: 27, y: 23}
+        - {x: 16, y: 35}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
