@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 using System;
 
 [ExecuteInEditMode]
@@ -16,6 +14,11 @@ public class HUDHitPointsDisplay : HUDCustomBar
     protected override void Update()
     {
         base.Update();
+
+        if (fillImages == null)
+        {
+            base.Recreate();
+        }
 
         foreach (var img in fillImages)
         {

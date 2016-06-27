@@ -38,10 +38,25 @@ public abstract class HUDCustomBar : MonoBehaviour
     protected int totalElements;
 
     protected List<GameObject> fillImages;
+    private int _previousTotalWidth;
+    private int _previousHeight;
+    private Vector2 _previousPosition;
 
     [ExecuteInEditMode]
+    void Awake()
+    {
+        print("HUD Custom Bar - Awake Called!");
+        Recreate();
+    }
     void Start()
     {
+        print("HUD Custom Bar - Start Called!");
+        Recreate();
+    }
+
+    protected void Recreate()
+    {
+        print("HUD Custom Bar - Recreate Called!");
         DestroyElements();
 
         Instatiate();
@@ -51,6 +66,7 @@ public abstract class HUDCustomBar : MonoBehaviour
 
     private void DestroyElements()
     {
+        print("HUD Custom Bar - DestroyElements Called!");
         fillImages = null;
         while (transform.childCount != 0)
         {
@@ -60,13 +76,34 @@ public abstract class HUDCustomBar : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (_previousProxyTotalElements != proxyTotalElements)
-            DestroyElements();
-        _previousProxyTotalElements = proxyTotalElements;
+        if (BasicBitchPlayer.current == null)
+        {
+
+            print("HUD Custom Bar - Update Called with Player instance as NULL!");
+            if (_previousProxyTotalElements != proxyTotalElements)
+            {
+                _previousProxyTotalElements = proxyTotalElements;
+                Recreate();
+            }
+        }
+        if (_previousTotalWidth != totalWidth
+            || _previousHeight != height
+            || _previousPosition.x != position.x
+            || _previousPosition.y != position.y)
+        {
+
+            _previousTotalWidth = totalWidth;
+            _previousHeight = height;
+            _previousPosition.x = position.x;
+            _previousPosition.y = position.y;
+            _previousTotalWidth = proxyTotalElements;
+            Recreate();
+        }
     }
 
     private void CreateElements()
     {
+        print("HUD Custom Bar - CreateElements Called!");
         // As placement of GUI elements is based off a 1920 x 1080 pixel screen we need to scale
         // width, height and the x and y anchor points to determine the correct position on a smaller
         // or larger screen. We do this by dividing the current width or height of the screen by 

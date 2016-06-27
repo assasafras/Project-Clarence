@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
 
 [ExecuteInEditMode]
@@ -12,9 +11,15 @@ public class HUDShieldDisplay : HUDCustomBar
         else
             totalElements = proxyTotalElements;
     }
-
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+        
+        if (fillImages == null)
+        {
+            base.Recreate();
+        }
+
         foreach (var img in fillImages)
         {
             img.SetActive(false);

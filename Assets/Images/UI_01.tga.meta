@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ea003e0d323c4a744a0242e39377594d
-timeCreated: 1463385947
+timeCreated: 1467007781
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -171,21 +171,20 @@ TextureImporter:
     - name: UI_Bar_HP_Version2
       rect:
         serializedVersion: 2
-        x: 950
-        y: 99
-        width: 131
-        height: 76
+        x: 961
+        y: 112
+        width: 110
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 43, y: 0, z: 44, w: 0}
+      border: {x: 34, y: 0, z: 34, w: 0}
       outline:
-      - - {x: -41.5, y: 38}
-        - {x: -65.5, y: 0}
-        - {x: -65.5, y: -36}
-        - {x: -64.5, y: -38}
-        - {x: 36.5, y: -38}
-        - {x: 65.5, y: -9}
-        - {x: 65.5, y: 38}
+      - - {x: -44, y: 25}
+        - {x: -55, y: 7}
+        - {x: -55, y: -25}
+        - {x: 44, y: -25}
+        - {x: 55, y: -5}
+        - {x: 55, y: 25}
     - name: UI_Shield_Border
       rect:
         serializedVersion: 2
