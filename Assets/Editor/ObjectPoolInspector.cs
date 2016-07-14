@@ -7,15 +7,13 @@ public class ObjectPoolInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
         ObjectPool myObjectPool = (ObjectPool)target;
 
-        EditorGUILayout.IntField("Hello", 1);
+        GUILayout.BeginHorizontal();
+        EditorGUILayout.PrefixLabel("Name:");
+        myObjectPool.name = EditorGUILayout.TextField(myObjectPool.name);
+        GUILayout.EndHorizontal();
 
-        //foreach (var keyValuePair in myObjectPool.Elements)
-        //{
-        //    EditorGUI.ObjectField(new Rect(0, 0, 0, 0), keyValuePair, typeof(GameObject), true);
-        //    EditorGUILayout.IntField("Hello", 1);
-        //}
+        base.OnInspectorGUI();
     }
 }

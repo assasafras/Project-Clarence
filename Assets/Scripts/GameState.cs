@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using Assets.Scripts.Events;
+using Assets.Scripts.Enums;
 
-public class GameState : MonoBehaviour
+public class GameState
 {
 
-    public delegate void GameOver();
+    public delegate void GameOverEventHandler (GameOverEventArgs e);
 
-    public static void TogglePause()
-    {
-        IsPaused = !IsPaused;
-    }
+    public static event GameOverEventHandler RaiseGameOverEvent = delegate { };
 
-    public static event GameOver OnGameOver = delegate { };
+    public delegate void PausedEventHandler (PausedEventArgs e);
 
-    public delegate void Paused(bool isPaused);
-
-    public static event Paused OnPaused = delegate { };
+    public static event PausedEventHandler RaisePausedEvent = delegate { };
 
     private static bool _pause;
     public static bool IsPaused
@@ -25,19 +22,16 @@ public class GameState : MonoBehaviour
         set
         {
             _pause = value;
-            OnPaused(value);
+            RaisePausedEvent(new PausedEventArgs(value));
         }
     }
-
-
-    // Use this for initialization
-    void Start ()
+    public static void TogglePause()
     {
-	    
-	}
+        IsPaused = !IsPaused;
+    }
 
     public static void EndGame()
     {
-        OnGameOver();
+        RaiseGameOverEvent(new GameOverEventArgs(GameOverStatus.lose));
     }
 }

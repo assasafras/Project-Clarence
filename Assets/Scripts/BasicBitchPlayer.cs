@@ -2,8 +2,21 @@
 using System.Collections;
 using Assets.Scripts;
 using System;
+using Assets.Scripts.Events;
+using Assets.Scripts.Interfaces;
+using Assets.Scripts.Obstacles;
+using Assets.Scripts.Utils;
+using Assets.Scripts.Pickups;
 
-public class BasicBitchPlayer : MonoBehaviour {
+public class BasicBitchPlayer : MonoBehaviour, ISubscriber
+{
+
+    public delegate void PlayerCollisionHandler(object sender, PlayerCollisionEventArgs a);
+
+    public event PlayerCollisionHandler RaisePlayerCollision = delegate { };
+
+    public delegate void PlayerCollectedPickupHandler(object sender, PlayerCollectedPickupEventArgs a);
+    public event PlayerCollectedPickupHandler RaisePlayerCollectedPickup = delegate { };
 
     public static BasicBitchPlayer current;
 
@@ -132,16 +145,15 @@ public class BasicBitchPlayer : MonoBehaviour {
     }
     void OnEnable()
     {
-        GameState.OnPaused += OnPausedHandler;
+        SubscribeToEvents();
     }
     void OnDisable()
     {
-        GameState.OnPaused -= OnPausedHandler;
+        UnsubscribeFromEvents();
     }
-
-    private void OnPausedHandler(bool isPaused)
+    private void OnPausedHandler(PausedEventArgs e)
     {
-        if (isPaused)
+        if (e.IsPaused)
         {
             previousMoveSpeed = MoveSpeed;
             MoveSpeed = 0;
@@ -150,5 +162,96 @@ public class BasicBitchPlayer : MonoBehaviour {
         {
             MoveSpeed = previousMoveSpeed;
         }
+    }
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        // Have we collided with the player?
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            CollidedWithObstacle(other);
+        }
+        else if(other.gameObject.CompareTag("Pickup"))
+        {
+            CollidedWithPickUp(other);
+        }
+    }
+
+    private void CollidedWithPickUp(Collision other)
+    {
+        APickup pickup;
+        // Find the Obstacle component on the other object (should have one if it has the tag "Obstacle").
+        try
+        {
+            pickup = other.gameObject.GetComponent<APickup>();
+        }
+        catch (Exception)
+        {
+            throw new Exception("Error in method " + ExceptionUtils.GetCurrentMethod() + " of " + ExceptionUtils.GetCurrentClass(this)
+                + ": Failed to find an APickup Script on the game object - " + ExceptionUtils.GetCurrentClass(other.gameObject));
+        }
+        // We have, raise an event for anyone listening!
+        OnRaisePlayedCollectedPickup(new PlayerCollectedPickupEventArgs(pickup));
+
+        // Now deal with the collision.
+        pickup.Collect();
+    }
+
+    private void OnRaisePlayedCollectedPickup(PlayerCollectedPickupEventArgs e)
+    {
+        // Make a temp copy of the event to avoid issues if the subscriber unsubscribes before event is porperly raised.
+        var handler = RaisePlayerCollectedPickup;
+
+        // Raise the event.
+        handler(this, e);
+    }
+
+    private void CollidedWithObstacle(Collision other)
+    {
+        Obstacle obs;
+        // Find the Obstacle component on the other object (should have one if it has the tag "Obstacle").
+        try
+        {
+            obs = other.gameObject.GetComponent<Obstacle>();
+        }
+        catch (Exception)
+        {
+            throw new Exception("Error in method " + ExceptionUtils.GetCurrentMethod() + " of " + ExceptionUtils.GetCurrentClass(this)
+                + ": Failed to find an Obstacle Script on the game object - " + ExceptionUtils.GetCurrentClass(other.gameObject));
+        }
+        // We have, raise an event for anyone listening!
+        OnRaisePlayerCollision(new PlayerCollisionEventArgs(obs));
+
+        // Now deal with the collision.
+        if (!this.godMode)
+        {
+            if (obs.killOnCollide)
+            {
+                this.Kill();
+            }
+            else
+            {
+                this.TakeDamage(obs.damage);
+            }
+        }
+    }
+
+    protected void OnRaisePlayerCollision(PlayerCollisionEventArgs e)
+    {
+        // Make a temp copy of the event to avoid issues if the subscriber unsubscribes before event is porperly raised.
+        var handler = RaisePlayerCollision;
+
+        // Raise the event.
+        handler(this, e);
+    }
+
+    // Implement the ISubscriber interface.
+    public void SubscribeToEvents()
+    {
+        GameState.RaisePausedEvent += OnPausedHandler;
+    }
+
+    public void UnsubscribeFromEvents()
+    {
+        GameState.RaisePausedEvent -= OnPausedHandler;
     }
 }

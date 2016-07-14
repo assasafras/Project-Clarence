@@ -45,18 +45,18 @@ public abstract class HUDCustomBar : MonoBehaviour
     [ExecuteInEditMode]
     void Awake()
     {
-        print("HUD Custom Bar - Awake Called!");
+        //print("HUD Custom Bar - Awake Called!");
         Recreate();
     }
     void Start()
     {
-        print("HUD Custom Bar - Start Called!");
+        //print("HUD Custom Bar - Start Called!");
         Recreate();
     }
 
     protected void Recreate()
     {
-        print("HUD Custom Bar - Recreate Called!");
+        //print("HUD Custom Bar - Recreate Called!");
         DestroyElements();
 
         Instatiate();
@@ -66,7 +66,7 @@ public abstract class HUDCustomBar : MonoBehaviour
 
     private void DestroyElements()
     {
-        print("HUD Custom Bar - DestroyElements Called!");
+        //print("HUD Custom Bar - DestroyElements Called!");
         fillImages = null;
         while (transform.childCount != 0)
         {
@@ -79,7 +79,7 @@ public abstract class HUDCustomBar : MonoBehaviour
         if (BasicBitchPlayer.current == null)
         {
 
-            print("HUD Custom Bar - Update Called with Player instance as NULL!");
+            //print("HUD Custom Bar - Update Called with Player instance as NULL!");
             if (_previousProxyTotalElements != proxyTotalElements)
             {
                 _previousProxyTotalElements = proxyTotalElements;
@@ -103,7 +103,7 @@ public abstract class HUDCustomBar : MonoBehaviour
 
     private void CreateElements()
     {
-        print("HUD Custom Bar - CreateElements Called!");
+        //print("HUD Custom Bar - CreateElements Called!");
         // As placement of GUI elements is based off a 1920 x 1080 pixel screen we need to scale
         // width, height and the x and y anchor points to determine the correct position on a smaller
         // or larger screen. We do this by dividing the current width or height of the screen by 

@@ -1,27 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Interfaces;
+using System;
+using Assets.Scripts.Events;
 
-public class GUIManager : MonoBehaviour
+public class GUIManager : MonoBehaviour, ISubscriber
 {
 
     void OnEnable()
     {
-        GameState.OnGameOver += OnGameOverHandler;
-        GameState.OnPaused += OnPausedHandler;
+        SubscribeToEvents();
     }
 
-    private void OnPausedHandler(bool isPaused)
+    private void OnPausedHandler(PausedEventArgs e)
     {
-        transform.FindChild("Pause").gameObject.SetActive(isPaused);
+        // Toggle the visibility of the Pause GUI.
+        transform.FindChild("Pause").gameObject.SetActive(e.IsPaused);
     }
 
     void OnDisable()
     {
-        GameState.OnGameOver -= OnGameOverHandler;
+        UnsubscribeFromEvents();
     }
 
-    void OnGameOverHandler()
+    void OnGameOverHandler(GameOverEventArgs e)
     {
+        // Show the GameOver GUI.
         this.transform.FindChild("Game Over").gameObject.SetActive(true);
+    }
+
+    // Implement ISubscriber Interface.
+    public void SubscribeToEvents()
+    {
+        GameState.RaiseGameOverEvent += OnGameOverHandler;
+        GameState.RaisePausedEvent += OnPausedHandler;
+    }
+
+    public void UnsubscribeFromEvents()
+    {
+        GameState.RaiseGameOverEvent -= OnGameOverHandler;
+        GameState.RaisePausedEvent -= OnPausedHandler;
     }
 }

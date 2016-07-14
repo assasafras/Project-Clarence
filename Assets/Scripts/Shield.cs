@@ -1,6 +1,4 @@
-﻿using Assets.Scripts;
-using Assets.Scripts.Attributes;
-using System;
+﻿using System;
 using UnityEngine;
 
 public class Shield : MonoBehaviour// : AComponent

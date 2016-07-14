@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Events;
+using Assets.Scripts.Interfaces;
+using System;
 
-public class PauseableParticles : MonoBehaviour
+public class PauseableParticles : MonoBehaviour, ISubscriber
 {
     ParticleSystem particles;
 
@@ -12,17 +15,17 @@ public class PauseableParticles : MonoBehaviour
 
     void OnEnable()
     {
-        GameState.OnPaused += OnPausedHandler;
+        SubscribeToEvents();
     }
 
     void OnDisable()
     {
-        GameState.OnPaused -= OnPausedHandler;
+        UnsubscribeFromEvents();
     }
 
-    private void OnPausedHandler(bool isPaused)
+    private void OnPausedHandler(PausedEventArgs e)
     {
-        if (isPaused)
+        if (e.IsPaused)
         {
             particles.Pause();
         }
@@ -30,5 +33,15 @@ public class PauseableParticles : MonoBehaviour
         {
             particles.Play();
         }
+    }
+    // Implement ISubscriber interface.
+    public void SubscribeToEvents()
+    {
+        GameState.RaisePausedEvent += OnPausedHandler;
+    }
+
+    public void UnsubscribeFromEvents()
+    {
+        GameState.RaisePausedEvent -= OnPausedHandler;
     }
 }

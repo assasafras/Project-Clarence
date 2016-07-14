@@ -15,6 +15,13 @@ public class World : MonoBehaviour {
     private BasicBitchPlayer player;
     public static World current;
 
+    public enum InputMethod
+    {
+        touch
+        , keyboard
+        , gamepad
+    }
+
     // Use this for initialization
     void Awake ()
     {
@@ -43,22 +50,7 @@ public class World : MonoBehaviour {
             hrzntl = Input.GetAxisRaw("Horizontal");
 
             // Touch input.
-            //for (var i = 0; i < Input.touchCount; ++i)
-            //{
-            //    Touch touch = Input.GetTouch(i);
-            //    if (touch.phase == TouchPhase.Began)
-            //    {
-            //        // Need to put .x
-            //        if (touch.position.x > (Screen.width * 0.5))
-            //        {
-            //            hrzntl = 1;
-            //        }
-            //        else
-            //        {
-            //            hrzntl = -1;
-            //        }
-            //    }
-            //}
+            //hrzntl = ProcessTouch();
 
             //// Mouse input.
             //if(Input.GetMouseButtonDown(0))
@@ -159,6 +151,30 @@ public class World : MonoBehaviour {
 
         }
     }
+
+    private static float ProcessTouch()
+    {
+        int hrzntl = 0;
+        for (var i = 0; i < Input.touchCount; ++i)
+        {
+            Touch touch = Input.GetTouch(i);
+            if (touch.phase == TouchPhase.Began)
+            {
+                // Need to put .x
+                if (touch.position.x > (Screen.width * 0.5))
+                {
+                    hrzntl = 1;
+                }
+                else
+                {
+                    hrzntl = -1;
+                }
+            }
+        }
+
+        return hrzntl;
+    }
+
     public void RotateUp()
     {
         SnapRotateWorld(1f);
