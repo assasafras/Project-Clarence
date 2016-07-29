@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Obstacles
 {
-    public class Obstacle : MovingPart
+    public class Obstacle : MonoBehaviour//: MovingPart
     {
 
         public bool canCollide;

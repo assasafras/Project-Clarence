@@ -4,16 +4,13 @@ using System;
 
 namespace Assets.Scripts.Pickups
 {
-    public class PickupShield : MovingPart
+    public class PickupShield : APickup
     {
-        void OnCollisionEnter(Collision other)
+        public override void Collect()
         {
-            if (other.gameObject.tag == "Player")
-            {
-                print("Shield Pickup: Collided with player");
-                var player = BasicBitchPlayer.current;
-                player.Shield.Activate();
-            }
+            var player = BasicBitchPlayer.current;
+            player.Shield.Activate();
+            this.gameObject.SetActive(false);
         }
     } 
 }

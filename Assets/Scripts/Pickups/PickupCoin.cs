@@ -17,8 +17,9 @@ namespace Assets.Scripts.Pickups
         {
             var player = BasicBitchPlayer.current;
             LevelState.coinsCollected += 1;
-            var mp = this.transform.parent.GetComponent<MovingPart>();
-            mp.SetBack();
+            this.gameObject.SetActive(false);
+            //var mp = this.transform.parent.GetComponent<MovingPart>();
+            //mp.SetBack();
         }
     } 
 }

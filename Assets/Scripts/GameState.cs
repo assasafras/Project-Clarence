@@ -4,7 +4,7 @@ using System;
 using Assets.Scripts.Events;
 using Assets.Scripts.Enums;
 
-public class GameState
+public static class GameState
 {
 
     public delegate void GameOverEventHandler (GameOverEventArgs e);

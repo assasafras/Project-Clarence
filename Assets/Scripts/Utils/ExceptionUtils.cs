@@ -14,12 +14,20 @@ namespace Assets.Scripts.Utils
         {
             StackTrace st = new StackTrace();
             StackFrame sf = st.GetFrame(1);
-
             return sf.GetMethod().Name;
         }
         public static string GetCurrentClass(object o)
         {
             return o.GetType().ToString();
+        }
+
+
+        public static string GetCurrentClassAndMethod(object o, string msg)
+        {
+            StackTrace st = new StackTrace();
+            StackFrame sf = st.GetFrame(2);
+            return GetCurrentClass(o) + "." + sf.GetMethod().Name + " - " + msg;
+
         }
     }
 }
