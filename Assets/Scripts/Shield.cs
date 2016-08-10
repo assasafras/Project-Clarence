@@ -1,82 +1,53 @@
 ﻿using System;
 using UnityEngine;
 
-public class Shield : MonoBehaviour// : AComponent
+public class Shield : MonoBehaviour
 {
 
-    public delegate void Change();
+    //public delegate void RemainingChangedHandler(int newAmount);
+    //public event RemainingChangedHandler OnRemainingChanged = delegate { };
 
-    public static event Change OnChange = delegate { };
-    private float _total;
-    public float Total
+    [SerializeField]
+    private int total;
+    public int Total
     {
-        get { return _total; }
+        get { return total; }
         set
         {
             if (Remaining == Total)
-                Remaining = _total = value;
+                Remaining = total = value;
             else
-                _total = value;
+                total = value;
         }
     }
 
-    private float _remaining;
-    public float Remaining
+    [SerializeField]
+    private int remaining;
+    public int Remaining
     {
-        get { return _remaining; }
+        get { return remaining; }
         set
         {
-            OnChange();
-            _remaining = value;
+            remaining = (value > Total) ? Total : value;
+            // Notify Listeners that the remaining value has changed.
+            //OnRemainingChanged(remaining); 
         }
     }
 
-    public float DecayRate { get; private set; }
-
-    public void Initialize(int total, float decayRate)
+    public bool Active
     {
-        Initialize(total, decayRate, false);
+        get { return Remaining > 0; }
+    }
+    public Shield(int total) : this(total, total) { }
+    public Shield(int total, int remaining) : this (total, remaining, 0) { }
+
+    public Shield(int total, int remaining, int minimum)
+    {
+        Total = total;
+        Remaining = remaining;
     }
 
-    public void Initialize(int total, float decayRate, bool startActive)
-    {
-        Remaining = Total = Convert.ToSingle(total);
-        
-        DecayRate = decayRate;
-        if (!startActive)
-        {
-            this.DeActivate();
-            Remaining = 0;
-        }
-    }
-
-    void Update()
-    {
-        //print("Shield: Update called!");
-        // Check if the shield is up first.
-        if (Active)
-        {
-            //print("Shield: Active is true so reducing Remaining Amount ("+Remaining+") by delta time " + Time.deltaTime);
-            // Shield is up, start reducing it's duration.
-            Remaining -= Time.deltaTime * DecayRate;
-        }
-    }
-
-    /// <summary>
-    /// Wrapper for Alive function.
-    /// </summary>
-    /// <returns>true if the shield is active, false if it is not.</returns>
-    public bool Active { get { return Remaining > 0; } }
-
-    /// <summary>
-    /// Activates the shield, bringing it to full capacity and setting it's remaining duration to the maximum.
-    /// </summary>
-    public void Activate()
-    {
-        Heal();
-    }
-
-    public void DeActivate()
+    public void Deactivate()
     {
         Remaining = 0;
     }
@@ -93,26 +64,13 @@ public class Shield : MonoBehaviour// : AComponent
     /// Cannot heal the unit above it's maximum HitPoints.
     /// </summary>
     /// <param name="amountToHeal">The amount of HitPoints to heal the unit by.</param>
-    public void Heal(float amountToHeal)
+    public void Heal(int amountToHeal)
     {
         Remaining += amountToHeal;
     }
 
     public float PercentRemaining()
     {
-        return Remaining / Total;
+        return Convert.ToSingle(Remaining) / Convert.ToSingle(Total);
     }
-
-    //public RawBonus ShieldDurationBonus = new RawBonus(1f);
-    //public RawBonus ShieldTotalBonus = new RawBonus(5f);
-    //override protected void AddAttributesToPlayer()
-    //{
-    //    player.ShieldDuration.AddRawBonus(ShieldDurationBonus);
-    //    player.ShieldTotal.AddRawBonus(ShieldTotalBonus);
-    //}
-    //override protected void RemoveAttributesFromPlayer()
-    //{
-    //    player.ShieldDuration.RemoveRawBonus(ShieldDurationBonus);
-    //    player.ShieldTotal.RemoveRawBonus(ShieldTotalBonus);
-    //}
 }

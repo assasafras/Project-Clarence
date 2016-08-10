@@ -4,14 +4,13 @@ using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEditor;
+using Assets.Scripts.PlayerScripts;
 
+[ExecuteInEditMode]
 public abstract class HUDCustomBar : MonoBehaviour
 {
+    public GameObject target;
     public GameObject fill;
-
-    [Range(1, 10)]
-    public int proxyTotalElements;
-    private int _previousProxyTotalElements;
 
     /// <summary>
     /// The total width on the screen that all elements will occupy.
@@ -42,7 +41,7 @@ public abstract class HUDCustomBar : MonoBehaviour
     private int _previousHeight;
     private Vector2 _previousPosition;
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     void Awake()
     {
         //print("HUD Custom Bar - Awake Called!");
@@ -76,16 +75,7 @@ public abstract class HUDCustomBar : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (BasicBitchPlayer.current == null)
-        {
-
-            //print("HUD Custom Bar - Update Called with Player instance as NULL!");
-            if (_previousProxyTotalElements != proxyTotalElements)
-            {
-                _previousProxyTotalElements = proxyTotalElements;
-                Recreate();
-            }
-        }
+        // Have any dimensions changed?
         if (_previousTotalWidth != totalWidth
             || _previousHeight != height
             || _previousPosition.x != position.x
@@ -96,7 +86,7 @@ public abstract class HUDCustomBar : MonoBehaviour
             _previousHeight = height;
             _previousPosition.x = position.x;
             _previousPosition.y = position.y;
-            _previousTotalWidth = proxyTotalElements;
+            _previousTotalWidth = totalWidth;
             Recreate();
         }
     }

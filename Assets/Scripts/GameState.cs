@@ -13,16 +13,16 @@ public static class GameState
 
     public delegate void PausedEventHandler (PausedEventArgs e);
 
-    public static event PausedEventHandler RaisePausedEvent = delegate { };
+    public static event PausedEventHandler OnPaused = delegate { };
 
-    private static bool _pause;
+    private static bool isPaused;
     public static bool IsPaused
     {
-        get { return _pause; }
+        get { return isPaused; }
         set
         {
-            _pause = value;
-            RaisePausedEvent(new PausedEventArgs(value));
+            isPaused = value;
+            OnPaused(new PausedEventArgs(value));
         }
     }
     public static void TogglePause()

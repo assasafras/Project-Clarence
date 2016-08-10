@@ -9,9 +9,13 @@ namespace Assets.Scripts.Obstacles
 {
     public class Obstacle : MonoBehaviour//: MovingPart
     {
-
         public bool canCollide;
         public bool killOnCollide;
         public int damage;
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("Collision!");
+        }
     }
 }

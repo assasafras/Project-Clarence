@@ -15,6 +15,7 @@ public class UpStateButton : Button
 
     public void WhilePressed()
     {
-        World.current.RotateUp();
+        Debug.Log("Not currently implemented...");
+        //World.current.RotateUp();
     }
 }

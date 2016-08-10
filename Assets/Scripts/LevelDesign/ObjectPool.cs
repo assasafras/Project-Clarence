@@ -46,14 +46,12 @@ public class ObjectPool : ScriptableObject
 
         // Has max value actually been set? if not then set it to 0.
         var r = min == float.MaxValue ? 0 : min;
-        Debug.Log(string.Format("{0} - returning {1}", ExceptionUtils.GetCurrentClassAndMethod(this, ""), r));
+        //Debug.Log(string.Format("{0} - returning {1}", ExceptionUtils.GetCurrentClassAndMethod(this, ""), r));
         return r;
     }
 
     public void Initialize()
     {
-        if (this.objectToPool.name == "Pickup_Shield")
-            Debug.Log("");
         if (Pool == null)
         {
             Pool = new List<GameObject>();
@@ -89,8 +87,8 @@ public class ObjectPool : ScriptableObject
     {
         var go = Instantiate(objectToPool);
         Pool.Add(go);
-        var tag = go.tag;
-        var parent = GameObject.Find(tag);
+        go.name += Pool.Count.ToString();
+        var parent = GameObject.Find("Poolables");
         go.transform.SetParent(parent.transform);
         go.SetActive(false);
     }
@@ -141,7 +139,7 @@ public class ObjectPool : ScriptableObject
         {
             // Sure, why not! Go ahead, add another one!
             AddObjectToPool();
-            // Now we have a spare object return oit to the caller.
+            // Now we have a spare object return it to the caller.
             return Pool[Pool.Count - 1];
         }
         else

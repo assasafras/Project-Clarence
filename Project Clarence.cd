@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.Scripts.Pickups.APickup">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Pickups\APickup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.PlayerScripts.Player">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.MovedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.TakeHPDamageHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.PlayerCollisionHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerCollision.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.KilledHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.PlayerCollectedPickupHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerCollision.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.CollectedPickupHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.FiredSecondaryHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.TakeDamageHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.TurningBeginHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.CollisionHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.TakeShieldDamageHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.ShieldDestroyedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.TurningEndHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Assets.Scripts.PlayerScripts.Player.FiredPrimaryHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PlayerScripts\PlayerEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QAQBIAABEQFAABkDAGCCAgAASEAIAAEIJEgIoAADAEI=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assets.Scripts.PlayerScripts.PlayerController">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

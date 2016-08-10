@@ -11,6 +11,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7b82ad53b8e9d40840396b627308eb, type: 3}
   m_Name: Piece2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  parent: {fileID: 0}
-  transforms: []
+  prefab: {fileID: 1000014032596400, guid: 7845acad5acaf6b41ac8cdadb7e03424, type: 2}
+  parentName: Poolables
+  transforms:
+  - position: {x: -1.89, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.38268334, y: -0, z: -0, w: 0.92387956}
+  - position: {x: -2.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    rotation: {x: -0.60876137, y: -0, z: -0, w: 0.7933534}
+  - position: {x: -3.89, y: 0, z: 0}
+    scale: {x: 1, y: 0.99999964, z: 0.99999964}
+    rotation: {x: -0.7933534, y: -0, z: -0, w: 0.6087615}
+  - position: {x: -7.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    rotation: {x: -0.7933535, y: -0, z: -0, w: -0.60876125}
+  - position: {x: -6.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    rotation: {x: -0.9238797, y: -0, z: -0, w: -0.38268316}
+  - position: {x: -5.89, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.99144495, y: -0, z: -0, w: -0.13052584}
+  - position: {x: -4.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000014, z: 1.0000014}
+    rotation: {x: -0.9914449, y: -0, z: -0, w: 0.13052641}
+  - position: {x: -8.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000014, z: 1.0000014}
+    rotation: {x: -0.60876167, y: -0, z: -0, w: -0.7933532}
+  - position: {x: -9.89, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.38268375, y: -0, z: -0, w: -0.9238794}
+  - position: {x: -10.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    rotation: {x: -0.13052654, y: -0, z: -0, w: -0.9914449}
+  - position: {x: -11.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    rotation: {x: 0.13052589, y: -0, z: -0, w: -0.9914449}
+  - position: {x: -12.89, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    rotation: {x: 0.38268298, y: -0, z: -0, w: -0.9238798}
+  - position: {x: -12.39, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    rotation: {x: 0.2588185, y: -0, z: -0, w: -0.965926}
+  - position: {x: -11.39, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    rotation: {x: -0.0000003576279, y: -0, z: -0, w: -1}
+  - position: {x: -10.39, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    rotation: {x: -0.25881943, y: -0, z: -0, w: -0.96592575}
+  - position: {x: -9.39, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.50000036, y: -0, z: -0, w: -0.8660252}
+  - position: {x: -8.39, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000014, z: 1.0000014}
+    rotation: {x: -0.707107, y: -0, z: -0, w: -0.7071066}
+  - position: {x: -4.39, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.9659258, y: -0, z: -0, w: 0.2588193}
+  - position: {x: -5.39, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -1, y: -0, z: -0, w: 0.00000041723246}
+  - position: {x: -6.39, y: 0, z: 0}
+    scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    rotation: {x: -0.96592593, y: -0, z: -0, w: -0.2588187}
+  - position: {x: -7.39, y: 0, z: 0}
+    scale: {x: 1, y: 0.99999964, z: 0.99999964}
+    rotation: {x: -0.86602557, y: -0, z: -0, w: -0.49999976}
+  - position: {x: -3.395, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.7071067, y: -0, z: -0, w: 0.7071068}
+  - position: {x: -2.395, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.49999988, y: -0, z: -0, w: 0.8660255}
+  - position: {x: -1.395, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.25881886, y: -0, z: -0, w: 0.9659259}
+  - position: {x: -0.395, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0, y: -0, z: -0, w: 1}

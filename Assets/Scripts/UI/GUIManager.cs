@@ -33,12 +33,12 @@ public class GUIManager : MonoBehaviour, ISubscriber
     public void SubscribeToEvents()
     {
         GameState.RaiseGameOverEvent += OnGameOverHandler;
-        GameState.RaisePausedEvent += OnPausedHandler;
+        GameState.OnPaused += OnPausedHandler;
     }
 
     public void UnsubscribeFromEvents()
     {
         GameState.RaiseGameOverEvent -= OnGameOverHandler;
-        GameState.RaisePausedEvent -= OnPausedHandler;
+        GameState.OnPaused -= OnPausedHandler;
     }
 }

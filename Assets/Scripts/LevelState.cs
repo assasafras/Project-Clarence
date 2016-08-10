@@ -31,7 +31,7 @@ namespace Assets.Scripts
         private static void SubscribeToEvents()
         {
             _playTimer.Elapsed += OnPlayTimerElapsed;
-            GameState.RaisePausedEvent += OnPausedHandler;
+            GameState.OnPaused += OnPausedHandler;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Assets.Scripts
         private static void UnsubscribeFromEvents()
         {
             _playTimer.Elapsed -= OnPlayTimerElapsed;
-            GameState.RaisePausedEvent -= OnPausedHandler;
+            GameState.OnPaused -= OnPausedHandler;
         }
 
         private static void OnPlayTimerElapsed(object sender, ElapsedEventArgs e)

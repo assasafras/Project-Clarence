@@ -1,76 +1,53 @@
 ﻿using System;
 using UnityEngine;
 
-public class HitPoints
+public class HitPoints : MonoBehaviour
 {
-    public delegate void Change();
+    //public delegate void RemainingChangedHandler(int newAmount);
+    //public event RemainingChangedHandler OnRemainingChanged = delegate { };
 
-    public static event Change OnChange = delegate { };
-
-    private int _total;
+    [SerializeField]
+    private int total;
     public int Total {
-        get {return _total; }
+        get {return total; }
         set
         {
             if (Remaining == Total)
-                Remaining = _total = value;
+                Remaining = total = value;
             else
-                _total = value;
+                total = value;
         }
     }
 
-    private int _remaining;
+    [SerializeField]
+    private int remaining;
     public int Remaining
     {
-        get { return _remaining; }
+        get { return remaining; }
         set
         {
-            _remaining = value;
-            OnChange(); // Notify Listeners that the remaingin value has changed.
-        }
-    }
-
-    private int _minimum;
-    /// <summary>
-    /// The amount of remaining hitpoints required to be considered alive.
-    /// </summary>
-    public int Minimum
-    {
-        get {return _minimum; }
-        set
-        {
-            // cannot set minimum greater than or equl to Total, so if attempted set it to 1 below Total.
-            _minimum = value >= Total ? Total - 1 : value;
+            remaining = value;
+            // Notify Listeners that the remaining value has changed.
+            //OnRemainingChanged(remaining); 
         }
     }
 
     public bool Alive
     {
-        get
-        {
-            return Remaining > Minimum;
-        }
+        get { return Remaining > 0; }
     }
-    public void Initialize(int total)
-    {
-        Initialize(total, total);
-    }
+    public HitPoints(int total) : this(total, total) { }
+    public HitPoints(int total, int remaining) : this (total, remaining, 0) { }
 
-    public void Initialize(int total, int remaining)
-    {
-        Initialize(total, remaining, 0);
-    }
-
-    public void Initialize(int total, int remaining, int minimum)
+    public HitPoints(int total, int remaining, int minimum)
     {
         Total = total;
         Remaining = remaining;
-        Minimum = minimum;
     }
 
     public void Kill()
     {
-        Remaining = Minimum - 1;
+        Remaining = 0;
     }
 
     /// <summary>

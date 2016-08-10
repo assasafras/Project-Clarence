@@ -31,7 +31,13 @@ public class InspectorPiece : Editor
             }
         EditorGUILayout.EndHorizontal();
 
-        tar.Parent = (GameObject) EditorGUILayout.ObjectField("Parent: ", tar.Parent, typeof(GameObject), true);
+
+        var n = EditorGUILayout.DelayedTextField("Parent Name: ", tar.ParentName);
+        if (tar.ParentName != n || tar.Parent == null)
+            tar.ParentName = n;
+        var p = (GameObject) EditorGUILayout.ObjectField("Parent Object: ", tar.Parent, (typeof(Object)), true);
+        if (tar.Parent != p)
+            tar.Parent = p;
         if (tar.Parent == null)
             EditorGUILayout.LabelField("You must specify a Parent GameObject from the Scene!");
         tar.Prefab = EditorGUILayout.ObjectField("Prefab: ", tar.Prefab, typeof(GameObject), false);
@@ -46,6 +52,8 @@ public class InspectorPiece : Editor
             DrawTransforms(tar);
         }
         GUILayout.HorizontalSlider(0, 0, 0);
+
+        EditorUtility.SetDirty(target);
     }
 
     private static void DrawTransforms(Piece tar)

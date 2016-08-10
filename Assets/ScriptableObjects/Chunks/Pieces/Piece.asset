@@ -12,5 +12,41 @@ MonoBehaviour:
   m_Name: Piece
   m_EditorClassIdentifier: 
   prefab: {fileID: 199616, guid: c27de8bcdb4774a4cbde3ed9c3f81aee, type: 2}
-  transforms: []
-  something: -272
+  parentName: Poolables
+  transforms:
+  - position: {x: -4.77, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659258}
+  - position: {x: -7.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.8660261, y: 0.000009178911, z: 0.000009178911, w: 0.4999988}
+  - position: {x: -6.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.9659259, y: 0.000008229588, z: 0.000008229588, w: 0.25881892}
+  - position: {x: -4.74, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.9659255, y: -0.000004751345, z: -0.000004751345, w: 0.25882027}
+  - position: {x: -10.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25882006, y: -0.00000064038863, z: -0.000000050805397, w: -0.9659256}
+  - position: {x: -11.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - position: {x: -5.81, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 1, y: -0.0000067194314, z: -0.0000067194314, w: 4.5150758e-11}
+  - position: {x: -2.81, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  - position: {x: -1.81, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.5000001, y: 0, z: 0, w: 0.8660253}
+  - position: {x: -8.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.7069847, y: 0, z: 0, w: -0.70722884}
+  - position: {x: -12.81, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659258}
+  - position: {x: -9.81, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.5000009, y: 0, z: 0, w: -0.8660249}

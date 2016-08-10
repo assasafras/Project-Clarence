@@ -7,11 +7,11 @@ public class InspectorObjectPool : Editor
 {
     public override void OnInspectorGUI()
     {
-        ObjectPool myObjectPool = (ObjectPool)target;
+        var tar = (ObjectPool) target;
 
         GUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Name:");
-        myObjectPool.name = EditorGUILayout.TextField(myObjectPool.name);
+        tar.name = EditorGUILayout.TextField(tar.name);
         GUILayout.EndHorizontal();
 
         base.OnInspectorGUI();

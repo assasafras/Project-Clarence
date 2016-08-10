@@ -21,8 +21,15 @@ namespace Assets.Scripts.LevelDesign
         {
             SubscribeToEvents();
         }
+
+        public void OnDestroy()
+        {
+            Debug.Log("OnDestroy Called!");
+        }
+
         void OnDisable()
         {
+            Debug.Log("OnDisable Called!");
             UnsubscribeFromEvents();
         }
 
@@ -62,33 +69,36 @@ namespace Assets.Scripts.LevelDesign
         public void LoadSpecificChunk(int index)
         {
             //Debug.Log(ExceptionUtils.GetCurrentMethod() + "(" + index + ")");
-            //foreach (var piece in chunks[index].Pieces)
-            //{
-            //    // Figure out which pool to get the object from
-            //    var name = piece.PrefabObject.name;
-            //    var pool = poolManager.ObjectPooler.GetPoolByName(name);
+            var selectedChunk = chunks[index];
 
-            //    var max = ObjectPoolList.FarthestX(poolManager.ObjectPooler);
-            //    Debug.Log(string.Format("{0} - max being set to {1}", ExceptionUtils.GetCurrentClass(this) + "."+ ExceptionUtils.GetCurrentMethod(), max));
-            //    var offset = new Vector3(max, 0);
-            //    // Now add in all objects required to fill out the chunk.
-            //    // Also note that the objects will (should) be parented to 
-            //    // appropriate objects so it should just be a matter of applying the transforms
-            //    foreach (var t in chunks[index].Transforms)
-            //    {
-            //        var instance = pool.GetObjectFromPool();
-            //        if (instance == null)
-            //        {
-            //            Debug.Log("Oh crap! We ran out of " + pool.objectToPool.name + "'s!");
-            //            return;
-            //        }
-            //        // Set the instanced game object's local transform
-            //        instance.transform.localPosition = (t.Position + offset);
-            //        instance.transform.localRotation = t.Rotation;
-            //        instance.transform.localScale = t.Scale;
-            //        Debug.Log(string.Format("Creating instance {0} at local position: {1}", instance.name, instance.transform.localPosition));
-            //    }
-            //}
+            var max = ObjectPoolList.FarthestX(poolManager.ObjectPooler);
+            var offset = new Vector3(max, 0);
+            foreach (var piece in selectedChunk.Pieces)
+            {
+                // Figure out which pool to get the object from
+                var name = piece.Prefab.name;
+                var pool = poolManager.ObjectPooler.GetPoolByName(name);
+
+                //Debug.Log(string.Format("{0} - max being set to {1}", ExceptionUtils.GetCurrentClass(this) + "." + ExceptionUtils.GetCurrentMethod(), max));
+                
+                // Now add in all objects required to fill out the chunk.
+                // Also note that the objects will (should) be parented to 
+                // appropriate objects so it should just be a matter of applying the transforms
+                foreach (var t in piece.Transforms)
+                {
+                    var instance = pool.GetObjectFromPool();
+                    if (instance == null)
+                    {
+                        Debug.Log("Oh crap! We ran out of " + pool.objectToPool.name + "'s!");
+                        return;
+                    }
+                    // Set the instanced game object's local transform
+                    instance.transform.localPosition = (t.Position + offset);
+                    instance.transform.localRotation = t.Rotation;
+                    instance.transform.localScale = t.Scale;
+                    //Debug.Log(string.Format("Creating instance {0} at local position: {1}", instance.name, instance.transform.localPosition));
+                }
+            }
         }
 
         public void SubscribeToEvents()

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7b82ad53b8e9d40840396b627308eb, type: 3}
+  m_Name: Piece1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 109908, guid: 7845acad5acaf6b41ac8cdadb7e03424, type: 2}
+  parentName: Poolables
+  transforms:
+  - position: {x: -24.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - position: {x: -2.9, y: 0.74, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659258}
+  - position: {x: -18.29, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 1, y: -0.0000067194314, z: -0.0000067194314, w: 4.5150758e-11}
+  - position: {x: -14.29, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.5000001, y: 0, z: 0, w: 0.8660253}
+  - position: {x: -25.29, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659258}
+  - position: {x: -22.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.5000009, y: 0, z: 0, w: -0.8660249}
+  - position: {x: -21.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.7069847, y: 0, z: 0, w: -0.70722884}
+  - position: {x: -23.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.25882006, y: -0.00000064038863, z: -0.000000050805397, w: -0.9659256}
+  - position: {x: -19.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.9659259, y: 0.000008229588, z: 0.000008229588, w: 0.25881892}
+  - position: {x: -15.29, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  - position: {x: -20.29, y: -0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: -0.8660261, y: 0.000009178911, z: 0.000009178911, w: 0.4999988}
+  - position: {x: -17.22, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    rotation: {x: 0.9659255, y: -0.000004751345, z: -0.000004751345, w: 0.25882027}

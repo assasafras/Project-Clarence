@@ -15,7 +15,7 @@ namespace Assets.Scripts.Pickups
         }
         public override void Collect()
         {
-            var player = BasicBitchPlayer.current;
+            //var player = PlayerStats.current;
             LevelState.coinsCollected += 1;
             this.gameObject.SetActive(false);
             //var mp = this.transform.parent.GetComponent<MovingPart>();

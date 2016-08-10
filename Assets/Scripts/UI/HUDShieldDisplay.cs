@@ -1,36 +1,29 @@
 ﻿using UnityEngine;
 using System;
+using Assets.Scripts.PlayerScripts;
 
 [ExecuteInEditMode]
 public class HUDShieldDisplay : HUDCustomBar
 {
+
     protected override void Instatiate()
     {
-        if (BasicBitchPlayer.current != null)
-            totalElements = BasicBitchPlayer.current.ShieldTotal;
-        else
-            totalElements = proxyTotalElements;
+        totalElements = target.GetComponent<Shield>().Total;
     }
     protected override void Update()
     {
+        if (totalElements != target.GetComponent<Shield>().Total)
+            Recreate();
+
         base.Update();
-        
-        if (fillImages == null)
+        foreach (var image in fillImages)
         {
-            base.Recreate();
+            image.SetActive(false);
         }
 
-        foreach (var img in fillImages)
-        {
-            img.SetActive(false);
-        }
+        var noOfElements = target.GetComponent<Shield>().Remaining;
 
-        var amount = Convert.ToSingle(proxyTotalElements);
-
-        if (BasicBitchPlayer.current != null)
-            amount = BasicBitchPlayer.current.Shield.Remaining;
-
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < noOfElements; i++)
         {
             fillImages[i].SetActive(true);
         }

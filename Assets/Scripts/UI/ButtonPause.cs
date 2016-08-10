@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Events;
+using System;
 
 public class ButtonPause : MonoBehaviour
 {
@@ -12,10 +14,29 @@ public class ButtonPause : MonoBehaviour
     {
         img = gameObject.GetComponent<Image>();
     }
-    public void OnClick()
+    public void OnEnable()
     {
-        GameState.TogglePause();
-        if(GameState.IsPaused)
+        SubscribeToEvents();
+    }
+
+    public void SubscribeToEvents()
+    {
+        GameState.OnPaused += PausedHandler;
+    }
+
+    public void OnDisable()
+    {
+        UnsubscribeFromEvents();
+    }
+
+    public void UnsubscribeFromEvents()
+    {
+        GameState.OnPaused -= PausedHandler;
+    }
+
+    private void PausedHandler(PausedEventArgs e)
+    {
+        if (GameState.IsPaused)
         {
             img.sprite = playSprite;
             img.rectTransform.Rotate(0, 0, -90);

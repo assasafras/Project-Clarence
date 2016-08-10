@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Enums;
+using Assets.Scripts.PlayerScripts;
 
 public class ButtonRotateDown : MonoBehaviour
 {
     public void OnClick()
     {
-        World.current.RotateDown();
+        Player.Current.Turn(Direction.RIGHT);
     }
 }

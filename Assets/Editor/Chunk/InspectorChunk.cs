@@ -45,5 +45,6 @@ public class InspectorChunk : Editor
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Separator();
         }
+        EditorUtility.SetDirty(target);
     }
 }

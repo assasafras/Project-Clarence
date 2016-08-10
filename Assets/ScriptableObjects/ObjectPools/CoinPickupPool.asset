@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f15b58293b244fbb210fbf49c400e, type: 3}
   m_Name: CoinPickupPool
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 109908, guid: 7845acad5acaf6b41ac8cdadb7e03424, type: 2}
+  objectToPool: {fileID: 1000014032596400, guid: 7845acad5acaf6b41ac8cdadb7e03424,
+    type: 2}
   pooledAmount: 50
   canGrow: 0
   isInitialized: 1

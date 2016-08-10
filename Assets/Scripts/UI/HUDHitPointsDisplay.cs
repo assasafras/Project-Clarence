@@ -1,38 +1,32 @@
 ﻿using UnityEngine;
 using System;
+using Assets.Scripts.PlayerScripts;
 
 [ExecuteInEditMode]
 public class HUDHitPointsDisplay : HUDCustomBar
 {
     protected override void Instatiate()
     {
-        if (BasicBitchPlayer.current != null)
-            totalElements = BasicBitchPlayer.current.HitPointsTotal;
-        else
-            totalElements = proxyTotalElements;
+        totalElements = target.GetComponent<HitPoints>().Total;
     }
+
     protected override void Update()
     {
+        if (totalElements != target.GetComponent<HitPoints>().Total)
+            Recreate();
+
         base.Update();
-
-        if (fillImages == null)
+        foreach (var image in fillImages)
         {
-            base.Recreate();
+            image.SetActive(false);
         }
 
-        foreach (var img in fillImages)
-        {
-            img.SetActive(false);
-        }
+        var noOfElements = target.GetComponent<HitPoints>().Remaining;
 
-        var amount = proxyTotalElements;
-
-        if (BasicBitchPlayer.current != null)
-            amount = BasicBitchPlayer.current.HP.Remaining;
-
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < noOfElements; i++)
         {
             fillImages[i].SetActive(true);
         }
     }
 }
+

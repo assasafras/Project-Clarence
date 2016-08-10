@@ -14,6 +14,7 @@ class InspectorObjectPoolList : Editor
         if (GUILayout.Button("Add"))
         {
             myObjectPoolList.Add();
+            EditorUtility.SetDirty(target);
         }
     }
 }

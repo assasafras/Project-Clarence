@@ -15,6 +15,6 @@ public class HUDCoins : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        txt.text = string.Format("x {0:n0}", BasicBitchPlayer.current.coinsCollected);
+        //txt.text = string.Format("x {0:n0}", PlayerStats.current.coinsCollected);
 	}
 }

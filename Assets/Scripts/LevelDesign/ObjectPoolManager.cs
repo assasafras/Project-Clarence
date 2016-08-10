@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Events;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.LevelDesign
@@ -29,17 +30,18 @@ namespace Assets.Scripts.LevelDesign
 
         private void CleanUpScene()
         {
-            foreach (var pool in ObjectPooler.ObjectPools)
+            //foreach (var pool in ObjectPooler.ObjectPools)
+            //{
+            //    var tag = pool.objectToPool.tag;
+            //    var o = GameObject.FindObjectsOfType<PleaseDONTDeleteMe>();
+            var parent = GameObject.Find("Poolables");
+            while (parent.gameObject.transform.childCount > 0)
             {
-                var tag = pool.objectToPool.tag;
-                var parent = GameObject.Find(tag);
-                while (parent.transform.childCount > 0)
-                {
-                    var t = parent.transform.GetChild(0);
-                    var go = t.gameObject;
-                    DestroyImmediate(go);
-                }
+                var t = parent.gameObject.transform.GetChild(0);
+                var go = t.gameObject;
+                DestroyImmediate(go);
             }
+            //}
         }
 
         /// <summary>

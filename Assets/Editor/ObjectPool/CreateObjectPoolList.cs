@@ -12,7 +12,7 @@ namespace Assets.Editor
         {
             ObjectPoolList asset = ScriptableObject.CreateInstance<ObjectPoolList>();
 
-            AssetDatabase.CreateAsset(asset, "Assets/ObjectPoolList.asset");
+            AssetDatabase.CreateAsset(asset, "Assets/ScriptableObjects/ObjectPoolList.asset");
             AssetDatabase.SaveAssets();
             return asset;
         }
